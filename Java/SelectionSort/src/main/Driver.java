@@ -22,21 +22,21 @@ public class Driver {
 		SelectionSort.byTitle(books100);
 		long endTime100 = System.nanoTime();
 		long duration100 = (endTime100 - startTime100) / 1000000; // Convert to milliseconds
-		System.out.println("Execution time: " + duration100);
+		System.out.println("Duration to sort 100 books: " + duration100);
 		
 		// Determine the duration to sort 1000 books
 		long startTime1000 = System.nanoTime();
 		SelectionSort.byTitle(books1000);
 		long endTime1000 = System.nanoTime();
 		long duration1000 = (endTime1000 - startTime1000) / 1000000; // Convert to milliseconds
-		System.out.println("Execution time: " + duration1000);
+		System.out.println("Duration to sort 1000 books: " + duration1000);
 		
 		// Determine the duration to sort 10000 books
 		long startTime10000 = System.nanoTime();
 		SelectionSort.byTitle(books10000);
 		long endTime10000 = System.nanoTime();
 		long duration10000 = (endTime10000 - startTime10000) / 1000000; // Convert to milliseconds
-		System.out.println("Execution time: " + duration10000);
+		System.out.println("Duration to sort 10000 books: " + duration10000);
 	}
 	
 	private static Book[] extractBooks(String fileName, int size) {
