@@ -1,41 +1,12 @@
 package domain;
 
-public class Sort {
+public class SelectionSort {
 	
-	public static int[] selectionSort(int[] input) {
-		
-		for(int i = 0; i < input.length; i++) {
-			int minIndex = i;
-			for(int j = i+1; j < input.length; j++) {
-				if(input[j] < input[minIndex]) {
-					minIndex = j;
-				}
-			}
-			if (minIndex != i) {
-				int temp = input[i];
-				input[i] = input[minIndex];
-				input[minIndex] = temp;
-			}
-		}
-		return input;
-	}
-	
-	public static Book[] selectionSortByAuthor(Book[] _books) {
-		Book[] sortedBooks = _books;
+	public static Book[] byAuthor(Book[] _books) {
+		Book[] sortedBooks = _books.clone();
 		for(int i = 0; i < sortedBooks.length; i++) {
 			int minIndex = i;
 			for(int j = i+1; j < sortedBooks.length; j++) {
-				
-				if(sortedBooks[j] == null) {
-					System.out.println("FOUND NULL");
-					System.out.println("i: " + i);
-					System.out.println("J: " + j);
-				}
-				
-				if(sortedBooks[minIndex] == null) {
-					System.out.println("FOUND NULL");
-					System.out.println("minIndex: " + minIndex);
-				}
 				
 				if(sortedBooks[j].compareAuthor(sortedBooks[minIndex]) < 0) {
 					minIndex = j;
@@ -48,8 +19,8 @@ public class Sort {
 		return sortedBooks;
 	}
 	
-	public static Book[] selectionSortByNumberPages(Book[] _books) {
-		Book[] sortedBooks = _books;
+	public static Book[] byNumberPages(Book[] _books) {
+		Book[] sortedBooks = _books.clone();
 		for(int i = 0; i < sortedBooks.length; i++) {
 			int minIndex = i;
 			for(int j = i+1; j < sortedBooks.length; j++) {
@@ -64,8 +35,8 @@ public class Sort {
 		return sortedBooks;
 	}
 	
-	public static Book[] selectionSortByTitle(Book[] _books) {
-		Book[] sortedBooks = _books;
+	public static Book[] byTitle(Book[] _books) {
+		Book[] sortedBooks = _books.clone();
 		for(int i = 0; i < sortedBooks.length; i++) {
 			int minIndex = i;
 			for(int j = i+1; j < sortedBooks.length; j++) {
