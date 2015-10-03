@@ -10,11 +10,11 @@ using std::cout;
 void extractBooks(string _fileName, vector<Book>& _books) {
 
 	string line;
-	std::ifstream myFile(_fileName);
+	std::ifstream bookFile(_fileName);
 
-	if(myFile.is_open()) {
+	if(bookFile.is_open()) {
 		int count = 0;
-		while(getline(myFile, line)) {
+		while(getline(bookFile, line)) {
 
 			vector<string> bookComponents = Utility::split(line,'*');
 
@@ -35,7 +35,7 @@ void extractBooks(string _fileName, vector<Book>& _books) {
 
 			count++;
 		}
-		myFile.close();
+		bookFile.close();
 	} else {
 		cout << "Failed to open: " << _fileName;
 	}
