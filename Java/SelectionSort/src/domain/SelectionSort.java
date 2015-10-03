@@ -2,53 +2,47 @@ package domain;
 
 public class SelectionSort {
 	
-	public static Book[] byAuthor(Book[] _books) {
-		Book[] sortedBooks = _books.clone();
-		for(int i = 0; i < sortedBooks.length; i++) {
+	public static void byAuthor(Book[] _books) {
+		for(int i = 0; i < _books.length; i++) {
 			int minIndex = i;
-			for(int j = i+1; j < sortedBooks.length; j++) {
+			for(int j = i+1; j < _books.length; j++) {
 				
-				if(sortedBooks[j].compareAuthor(sortedBooks[minIndex]) < 0) {
+				if(_books[j].compareAuthor(_books[minIndex]) < 0) {
 					minIndex = j;
 				}
 			}
 			if (minIndex != i) {
-				swapBooks(sortedBooks, i, minIndex);
+				swapBooks(_books, i, minIndex);
 			}
 		}
-		return sortedBooks;
 	}
 	
-	public static Book[] byNumberPages(Book[] _books) {
-		Book[] sortedBooks = _books.clone();
-		for(int i = 0; i < sortedBooks.length; i++) {
+	public static void byNumberPages(Book[] _books) {
+		for(int i = 0; i < _books.length; i++) {
 			int minIndex = i;
-			for(int j = i+1; j < sortedBooks.length; j++) {
-				if(sortedBooks[j].compareNumberPages(sortedBooks[minIndex]) < 0) {
+			for(int j = i+1; j < _books.length; j++) {
+				if(_books[j].compareNumberPages(_books[minIndex]) < 0) {
 					minIndex = j;
 				}
 			}
 			if (minIndex != i) {
-				swapBooks(sortedBooks, i, minIndex);
+				swapBooks(_books, i, minIndex);
 			}
 		}
-		return sortedBooks;
 	}
 	
-	public static Book[] byTitle(Book[] _books) {
-		Book[] sortedBooks = _books.clone();
-		for(int i = 0; i < sortedBooks.length; i++) {
+	public static void byTitle(Book[] _books) {
+		for(int i = 0; i < _books.length; i++) {
 			int minIndex = i;
-			for(int j = i+1; j < sortedBooks.length; j++) {
-				if(sortedBooks[j].compareTitle(sortedBooks[minIndex]) < 0) {
+			for(int j = i+1; j < _books.length; j++) {
+				if(_books[j].compareTitle(_books[minIndex]) < 0) {
 					minIndex = j;
 				}
 			}
 			if (minIndex != i) {
-				swapBooks(sortedBooks, i, minIndex);
+				swapBooks(_books, i, minIndex);
 			}
 		}
-		return sortedBooks;
 	}
 	
 	private static void swapBooks(Book[] _books, int swap1, int swap2) {

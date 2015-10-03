@@ -42,4 +42,9 @@ public class Book {
 	public String getTitle() {
 		return this.title;
 	}
+	
+	@Override
+	public String toString() {
+		return "Author: " + this.author.getLastName() + "\n" + "Title: " + this.title + "\n" + "Pages: " + this.numberPages + "\n\n";
+	}
 }

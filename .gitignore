@@ -6,3 +6,6 @@ bin
 .project
 .recommenders
 log
+.mk
+.cproject
+Debug

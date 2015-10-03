@@ -19,33 +19,42 @@ public class Driver {
 			
 		// Determine the duration to sort 100 books
 		long startTime100 = System.nanoTime();
-		SelectionSort.byTitle(books100);
+		SelectionSort.byAuthor(books100);
+		//SelectionSort.byNumberPages(books100);
+		//SelectionSort.byTitle(books100);
 		long endTime100 = System.nanoTime();
 		long duration100 = (endTime100 - startTime100) / 1000000; // Convert to milliseconds
 		System.out.println("Duration to sort 100 books: " + duration100);
+		printBooks(books100);
 		
 		// Determine the duration to sort 1000 books
 		long startTime1000 = System.nanoTime();
-		SelectionSort.byTitle(books1000);
+		SelectionSort.byAuthor(books1000);
+		//SelectionSort.byNumberPages(books1000);
+		//SelectionSort.byTitle(books1000);
 		long endTime1000 = System.nanoTime();
 		long duration1000 = (endTime1000 - startTime1000) / 1000000; // Convert to milliseconds
 		System.out.println("Duration to sort 1000 books: " + duration1000);
+		//printBooks(books1000);
 		
 		// Determine the duration to sort 10000 books
 		long startTime10000 = System.nanoTime();
-		SelectionSort.byTitle(books10000);
+		SelectionSort.byAuthor(books10000);
+		//SelectionSort.byNumberPages(books10000);
+		//SelectionSort.byTitle(books10000);
 		long endTime10000 = System.nanoTime();
 		long duration10000 = (endTime10000 - startTime10000) / 1000000; // Convert to milliseconds
 		System.out.println("Duration to sort 10000 books: " + duration10000);
+		//printBooks(books10000);
 	}
 	
-	private static Book[] extractBooks(String fileName, int size) {
-		Book[] books = new Book[size];
+	private static Book[] extractBooks(String _fileName, int _size) {
+		Book[] books = new Book[_size];
 
 		BufferedReader br = null;
 		int count = 0;
 		try {
-			br = new BufferedReader(new FileReader(fileName));
+			br = new BufferedReader(new FileReader(_fileName));
 			
 		    StringBuilder sb = new StringBuilder();
 		    String line = br.readLine();
@@ -79,6 +88,14 @@ public class Driver {
 			}
 		}
 		return books;
+	}
+	
+	private static void printBooks(Book[] _books) {
+		System.out.println();
+		for(int i = 0; i < _books.length; i++) {
+			System.out.println("Book Number: " + i);
+			System.out.print(_books[i].toString());
+		}
 	}
 }
 
