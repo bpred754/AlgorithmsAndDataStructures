@@ -9,3 +9,6 @@ log
 .mk
 .cproject
 Debug
+
+#### Python
+*.pyc
