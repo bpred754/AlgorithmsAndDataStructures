@@ -45,6 +45,8 @@ books10000 = extractBooks("../googleBooks10000.txt")
 
 startTime100 = timer()
 SelectionSort.byAuthor(books100)
+#SelectionSort.byNumberPages(books100)
+#SelectionSort.byTitle(books100)
 endTime100 = timer()
 duration100 = (endTime100 - startTime100) * 1000 # Convert to milliseconds
 print "Duration to sort 100 books: " + str(duration100)
@@ -52,6 +54,8 @@ printBooks(books100)
 
 startTime1000 = timer()
 SelectionSort.byAuthor(books1000)
+#SelectionSort.byNumberPages(books1000)
+#SelectionSort.byTitle(books1000)
 endTime1000 = timer()
 duration1000 = (endTime1000 - startTime1000) * 1000 # Convert to milliseconds
 print "Duration to sort 1000 books: " + str(duration1000)
@@ -59,6 +63,8 @@ print "Duration to sort 1000 books: " + str(duration1000)
 
 startTime10000 = timer()
 SelectionSort.byAuthor(books10000)
+#SelectionSort.byNumberPages(books10000)
+#SelectionSort.byTitle(books10000)
 endTime10000 = timer()
 duration10000 = (endTime10000 - startTime10000) * 1000 # Convert to milliseconds
 print "Duration to sort 10000 books: " + str(duration10000)
