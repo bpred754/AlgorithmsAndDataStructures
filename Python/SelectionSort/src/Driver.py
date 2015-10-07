@@ -5,9 +5,8 @@ from SelectionSort import SelectionSort
 from timeit import default_timer as timer
 
 def extractBooks(inFileName):
-    filename = inFileName
 
-    txt = open(filename)
+    txt = open(inFileName)
     splitTxt = txt.read().split("\n")
     splitTxt = splitTxt[:-1] # Remove blank string from the last index of the array
 
