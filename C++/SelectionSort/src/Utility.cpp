@@ -34,6 +34,7 @@ int64 Utility::getTimeMs() {
 	#endif
 }
 
+// Public function to split string by delimiter
 vector<string> Utility::split(const string &_s, char _delim) {
     vector<string> elems;
     split(_s, _delim, elems);
