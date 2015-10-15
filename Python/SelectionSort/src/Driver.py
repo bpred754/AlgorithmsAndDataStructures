@@ -38,10 +38,12 @@ def printBooks(books):
         print "Pages: " + book.getNumberPages()
         index += 1
 
+# Extract book information from text files into array of Book objects
 books100 = extractBooks("../googleBooks100.txt")
 books1000 = extractBooks("../googleBooks1000.txt")
 books10000 = extractBooks("../googleBooks10000.txt")
 
+# Determine the duration to sort 100 books
 startTime100 = timer()
 SelectionSort.byAuthor(books100)
 #SelectionSort.byNumberPages(books100)
@@ -51,6 +53,7 @@ duration100 = (endTime100 - startTime100) * 1000 # Convert to milliseconds
 print "Duration to sort 100 books: " + str(duration100)
 printBooks(books100)
 
+# Determine the duration to sort 1000 books
 startTime1000 = timer()
 SelectionSort.byAuthor(books1000)
 #SelectionSort.byNumberPages(books1000)
@@ -60,6 +63,7 @@ duration1000 = (endTime1000 - startTime1000) * 1000 # Convert to milliseconds
 print "Duration to sort 1000 books: " + str(duration1000)
 #printBooks(books1000)
 
+# Determine the duration to sort 10000 books
 startTime10000 = timer()
 SelectionSort.byAuthor(books10000)
 #SelectionSort.byNumberPages(books10000)
