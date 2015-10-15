@@ -5,7 +5,9 @@
   var Book = require('./Book');
   var SelectionSort = require('./SelectionSort');
 
+  // Extract book information from text files into array of Book objects
   extractBooks("../googleBooks100.txt", function(_books100) {
+    // Determine the duration to sort 100 books
     console.time("Duration to sort 100 books: ");
     SelectionSort.byAuthor(_books100);
     //SelectionSort.byNumberPages(_books100);
@@ -13,7 +15,9 @@
     console.timeEnd("Duration to sort 100 books: ");
     printBooks(_books100);
 
+    // Extract book information from text files into array of Book objects
     extractBooks("../googleBooks1000.txt", function(_books1000) {
+      // Determine the duration to sort 1000 books
       console.time("Duration to sort 1000 books: ");
       SelectionSort.byAuthor(_books1000);
       //SelectionSort.byNumberPages(_books1000);
@@ -21,7 +25,9 @@
       console.timeEnd("Duration to sort 1000 books: ");
       //printBooks(_books1000);
 
+      // Extract book information from text files into array of Book objects
       extractBooks("../googleBooks10000.txt", function(_books10000) {
+        // Determine the duration to sort 10000 books
         console.time("Duration to sort 10000 books: ");
         SelectionSort.byAuthor(_books10000);
         //SelectionSort.byNumberPages(_books10000);
