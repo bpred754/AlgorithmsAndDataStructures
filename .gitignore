@@ -12,3 +12,6 @@ Debug
 
 #### Python
 *.pyc
+
+### Mac
+.DS_Store

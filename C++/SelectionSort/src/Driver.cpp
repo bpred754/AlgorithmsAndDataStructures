@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
 #include "Book.h"
 #include "SelectionSort.h"
@@ -27,7 +28,7 @@ void extractBooks(string _fileName, vector<Book>& _books) {
 				firstName += authorNames[i] + " ";
 			}
 
-			int numberPages = stoi(bookComponents[2]);
+			int numberPages = atoi(bookComponents[2].c_str());
 
 			Author author = Author(firstName, lastName);
 			Book book = Book(title, author, numberPages);
