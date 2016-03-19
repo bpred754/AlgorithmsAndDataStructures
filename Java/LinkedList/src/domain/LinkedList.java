@@ -6,48 +6,6 @@ public class LinkedList<T> {
 	private Node<T> tail;
 	private int numberNodes = 0;
 	
-	// Get element at the specified index
-	public T get(int _index) {
-		
-		Node<T> returnNode = null;
-		
-		// Traverse list for element at index if list is not empty and _index is valid
-		if(this.head != null && _index >= 0 && _index < this.numberNodes) {
-			int count = 0;
-			Node<T> currentNode = this.head;
-			do { // Execute do logic at least once
-				
-				// Set return node if current node count matches _index
-				if(count == _index) {
-					returnNode = currentNode;
-				}
-				
-				// Prepare for next iteration
-				currentNode = currentNode.getNext();
-				count++;
-			}
-			while(currentNode != null);
-		}
-		return returnNode.getData();
-	}
-	
-	// Insert element at the beginning of the list
-	public void push(T _data) {
-		
-		Node<T> addNode = new Node<T>(_data);
-		
-		// Set head and tail to new pointer if list is empty
-		if(this.head == null) {
-			this.head = addNode;
-			this.tail = addNode;
-		} else {
-			addNode.setNext(this.head); // Set new node's next pointer to the current head
-			this.head = addNode;  // Set head to new node
-		}
-		
-		this.numberNodes++;
-	}
-	
 	// Insert element at the end of the list
 	public void add(T _data) {
 		
@@ -103,6 +61,48 @@ public class LinkedList<T> {
 				}
 			}
 		}
+	}
+	
+	// Get element at the specified index
+	public T get(int _index) {
+		
+		Node<T> returnNode = null;
+		
+		// Traverse list for element at index if list is not empty and _index is valid
+		if(this.head != null && _index >= 0 && _index < this.numberNodes) {
+			int count = 0;
+			Node<T> currentNode = this.head;
+			do { // Execute do logic at least once
+				
+				// Set return node if current node count matches _index
+				if(count == _index) {
+					returnNode = currentNode;
+				}
+				
+				// Prepare for next iteration
+				currentNode = currentNode.getNext();
+				count++;
+			}
+			while(currentNode != null);
+		}
+		return returnNode.getData();
+	}
+	
+	// Insert element at the beginning of the list
+	public void push(T _data) {
+		
+		Node<T> addNode = new Node<T>(_data);
+		
+		// Set head and tail to new pointer if list is empty
+		if(this.head == null) {
+			this.head = addNode;
+			this.tail = addNode;
+		} else {
+			addNode.setNext(this.head); // Set new node's next pointer to the current head
+			this.head = addNode;  // Set head to new node
+		}
+		
+		this.numberNodes++;
 	}
 	
 	// Remove element at specified index
